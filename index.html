@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles/source/style.css">
+  
+  <title>Frontend Mentor | Weather app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+<div class="app">
+  <nav class="nav max-w">
+    <img src="./assets/images/logo.svg" alt="Weather Now Logo" class="logo">
+
+    <div class="units">
+      <div class="drop-sel">
+        <img src="assets\images\icon-units.svg" alt=""> Units 
+        <img src="assets/images/icon-dropdown.svg" alt="">
+      </div>
+      <div class="drop-opt"></div>
+    </div>
+
+
+  </nav>
+  <h1>How's the sky looking today</h1>
+  <div class="search">
+    <div class="input-con">
+      <img src="assets/images/icon-search.svg" alt="">
+      <input type="text" placeholder="Search for a place..." name="search" id="search">
+    </div>
+    <button>Search</button>
+  </div>
+
+
+  <div class="forecast max-w">
+    <div class="left-box">
+        <div class="display-forecast">
+          <picture>
+            <source media="(max-width: 544px)" srcset="./assets/images/bg-today-small.svg">
+            <img src="assets/images/bg-today-large.svg" alt="" class="display-img">
+          </picture>
+          <div class="detail-nd-temp">
+            <div class="details">
+              <p class="location">Berlin, Germany</p>
+              <p class="location">Tuesday, Aug 5, 2025</p>
+            </div>
+            <div class="temp-con">
+              <img src="assets/images/icon-sunny.webp" alt="">
+              <h2 class="temp">20°</h2>
+            </div>
+          </div>
+        </div>
+
+
+      <div class="feel-forecast">
+        <div class="box">
+          <p class="box-text">Feels Like</p>
+          <p class="box-temp">18°</p>
+        </div>
+        <div class="box">
+          <p class="box-text">Humidity</p>
+          <p class="box-temp">46%</p>
+        </div>
+        <div class="box">
+          <p class="box-text">Wind</p>
+          <p class="box-temp">14 km/h</p>
+        </div>
+        <div class="box">
+          <p class="box-text">Prepicitation</p>
+          <p class="box-temp">0 mm</p>
+        </div>
+      </div>
+
+
+      <div class="daily-forecast">
+        <h3>Daily forecast</h3>
+        <div class="daily-con">
+          <div class="box">
+            <p class="day">Tue</p>
+            <img src="assets/images/icon-rain.webp" alt="rainy">
+            <div class="temp-daily">
+              <span>20°</span>
+              <span>14°</span>
+            </div>
+          </div>
+          <div class="box">
+            <p class="day">Wed</p>
+            <img src="assets/images/icon-rain.webp" alt="rainy">
+            <div class="temp-daily">
+              <span>21°</span>
+              <span>15°</span>
+            </div>
+          </div>
+          <div class="box">
+            <p class="day">Thu</p>
+            <img src="assets/images/icon-sunny.webp" alt="sunny">
+            <div class="temp-daily">
+              <span>24°</span>
+              <span>14°</span>
+            </div>
+          </div>
+          <div class="box">
+            <p class="day">Fri</p>
+            <img src="assets/images/icon-partly-cloudy.webp" alt="partly cloudy">
+            <div class="temp-daily">
+              <span>25°</span>
+              <span>13°</span>
+            </div>
+          </div>
+          <div class="box">
+            <p class="day">Sat</p>
+            <img src="assets/images/icon-storm.webp" alt="storm">
+            <div class="temp-daily">
+              <span>21°</span>
+              <span>15°</span>
+            </div>
+          </div>
+          <div class="box">
+            <p class="day">Sun</p>
+            <img src="assets/images/icon-snow.webp" alt="snow">
+            <div class="temp-daily">
+              <span>25°</span>
+              <span>16°</span>
+            </div>
+          </div>
+          <div class="box">
+            <p class="day">Mon</p>
+            <img src="assets/images/icon-fog.webp" alt="rainy">
+            <div class="temp-daily">
+              <span>24°</span>
+              <span>15°</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <div class="right-box">
+      <div class="hourly-forecast">
+            <div class="hourly-title">
+              <h4>Hourly forecast</h4>
+              <div class="drop-day">
+                <div class="drop">
+                  Tuesday <img src="assets/images/icon-dropdown.svg" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="list-con">
+              <div class="hour-box">
+                <div class="detail">
+                  <img src="assets/images/icon-overcast.webp" alt=""> 
+                  <span class="time">12 AM</span>
+                </div>
+                <span class="temp">20°</span>
+              </div>
+              <div class="hour-box">
+                <div class="detail">
+                  <img src="assets/images/icon-overcast.webp" alt=""> 
+                  <span class="time">12 AM</span>
+                </div>
+                <span class="temp">20°</span>
+              </div>
+              <div class="hour-box">
+                <div class="detail">
+                  <img src="assets/images/icon-overcast.webp" alt=""> 
+                  <span class="time">12 AM</span>
+                </div>
+                <span class="temp">20°</span>
+              </div>
+              <div class="hour-box">
+                <div class="detail">
+                  <img src="assets/images/icon-overcast.webp" alt=""> 
+                  <span class="time">12 AM</span>
+                </div>
+                <span class="temp">20°</span>
+              </div>
+              <div class="hour-box">
+                <div class="detail">
+                  <img src="assets/images/icon-overcast.webp" alt=""> 
+                  <span class="time">12 AM</span>
+                </div>
+                <span class="temp">20°</span>
+              </div>
+              <div class="hour-box">
+                <div class="detail">
+                  <img src="assets/images/icon-overcast.webp" alt=""> 
+                  <span class="time">12 AM</span>
+                </div>
+                <span class="temp">20°</span>
+              </div>
+              <div class="hour-box">
+                <div class="detail">
+                  <img src="assets/images/icon-overcast.webp" alt=""> 
+                  <span class="time">12 AM</span>
+                </div>
+                <span class="temp">20°</span>
+              </div>
+              <div class="hour-box">
+                <div class="detail">
+                  <img src="assets/images/icon-overcast.webp" alt=""> 
+                  <span class="time">12 AM</span>
+                </div>
+                <span class="temp">20°</span>
+              </div>
+              <div class="hour-box">
+                <div class="detail">
+                  <img src="assets/images/icon-overcast.webp" alt=""> 
+                  <span class="time">12 AM</span>
+                </div>
+                <span class="temp">20°</span>
+              </div>
+              <div class="hour-box">
+                <div class="detail">
+                  <img src="assets/images/icon-overcast.webp" alt=""> 
+                  <span class="time">12 AM</span>
+                </div>
+                <span class="temp">20°</span>
+              </div>
+              <div class="hour-box">
+                <div class="detail">
+                  <img src="assets/images/icon-overcast.webp" alt=""> 
+                  <span class="time">12 AM</span>
+                </div>
+                <span class="temp">20°</span>
+              </div>
+              <div class="hour-box">
+                <div class="detail">
+                  <img src="assets/images/icon-overcast.webp" alt=""> 
+                  <span class="time">12 AM</span>
+                </div>
+                <span class="temp">20°</span>
+              </div>
+            </div>
+
+          </div>
+    </div>
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+  
+  <!-- Units
+
+  Switch to Imperial/Metric
+
+  Temperature
+
+  Celsius (°C)
+  Fahrenheit (°F)
+
+  Wind Speed
+
+  km/h
+  mph
+
+  Precipitation
+
+  Millimeters (mm)
+  Inches (in)
+
+  How's the sky looking today?
+
+  Search for a city, e.g., New York
+  Search
+
+  Feels like -->
+  <!-- Insert temperature here -->
+
+  <!-- Humidity -->
+
+  <!-- Insert humidity here -->
+
+  <!-- Wind -->
+  <!-- Insert wind here -->   
+  
+  <!-- Precipitation -->
+  <!-- Insert precipitation here -->
+
+  <!-- Daily forecast -->
+  <!-- Insert daily forecast for the next 7 days here -->
+
+  <!-- Hourly forecast -->
+  <!-- Insert hourly forecast for the selected day here -->
+
+
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  
+  <script>
+    try{
+      const url = "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&daily=weather_code,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset,daylight_duration,sunshine_duration,uv_index_max,uv_index_clear_sky_max,rain_sum,showers_sum,snowfall_sum,precipitation_sum,precipitation_hours,precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max,wind_direction_10m_dominant,shortwave_radiation_sum,et0_fao_evapotranspiration&hourly=temperature_2m,relative_humidity_2m,dew_point_2m,apparent_temperature,precipitation_probability,precipitation,rain,showers,snowfall,snow_depth,weather_code,pressure_msl,surface_pressure,cloud_cover,cloud_cover_low,cloud_cover_mid,cloud_cover_high,visibility,evapotranspiration,et0_fao_evapotranspiration,vapour_pressure_deficit,wind_speed_10m,wind_speed_80m,wind_speed_120m,wind_speed_180m,wind_direction_10m,wind_direction_80m,wind_direction_120m,wind_direction_180m,wind_gusts_10m,temperature_80m,temperature_120m,temperature_180m&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,rain,showers,snowfall,weather_code,cloud_cover,pressure_msl,surface_pressure,wind_speed_10m,wind_direction_10m,wind_gusts_10m"
+      const geo = "https://geocoding-api.open-meteo.com/v1/search?name=Berlin&count=10&language=en&format=json"
+      async function g(){
+        const h = await fetch(url);
+        const gh = await h.json();
+        console.log(gh)
+        console.log("hi")
+      }
+      
+      g()
+    }catch(err){
+      console.log(err)
+    }
+    
+  </script>
+</body>
+</html>
