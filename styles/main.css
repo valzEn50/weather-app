@@ -1,3 +1,15 @@
+@font-face {
+    font-family: Bricolage;
+    src: url(../assets/fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont_opsz\,wdth\,wght.ttf);
+}
+@font-face {
+    font-family: DM_Sans;
+    src: url(../assets/fonts/DM_Sans/DMSans-Italic-VariableFont_opsz\,wght.ttf);
+}
+@font-face {
+    font-family: DM_Sans1;
+    src: url(../assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf);
+}
 *{
     padding: 0;
     margin: 0;
@@ -5,12 +17,13 @@
 }
 body{
     background-color: var(--neutral-900);
-    color: var(--neutral-0)
+    color: var(--neutral-0);
+    font-family: DM_Sans1;
     /* min-height: 100vh; */
 }
 .app{
     width: 100%;
-    min-height: 100vh;
+    min-height: 100dvh;
     padding: 30px 25px;
 }
 .nav{
@@ -21,6 +34,17 @@ body{
 .nav .logo{
     width: 150px;
 }
+.nav .units{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-weight: 300;
+    cursor: pointer;
+}
+.nav .units .unit-dropdown{
+    display: none;
+    appearance: none;
+}
 .nav .units .drop-sel{
     display: flex;
     align-items: center;
@@ -29,6 +53,7 @@ body{
     padding: 8px 10px;
     border-radius: 4px;
 }
+
 .nav .units img{
     width: 12px;
     /* display: block; */
@@ -36,10 +61,87 @@ body{
 .nav .units img:nth-child(1){
     width: 16px;
 }
-h1{
+.nav .units .drop-opt{
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--neutral-800);
+    border-color: 1px solid var(--neutral-700);
+    border-radius: 7px;
+    padding: 3px 5px;
+    box-shadow: 4px 4px 10px 8px rgba(0, 0, 0, 0.089);
+    font-size: 0.8rem;
+    z-index: 10;
+    opacity: 0;
+    transition: 0.35s ease;
+    visibility: hidden;
+}
+.nav .units .unit-icon-dropdown{
+        transition: 0.35s ease;
+    }
+.nav .units:has(.unit-dropdown[type="checkbox"]:checked){
+    .drop-opt{
+        visibility: visible;
+        opacity: 1;
+        transition: 0.35s ease;
+    }
+    .unit-icon-dropdown{
+        transform: rotate(180deg);
+        transition: 0.35s ease;
+    }
+}
+.nav .units .drop-opt input{
+    display: none;
+    appearance: none;
+}
+.nav .units .drop-opt label{
+    padding: 6px 6px;
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    transition: all 0.35s ease;
+}
+.nav .units .drop-opt label:hover{
+    background-color: var(--neutral-700);
+}
+.nav .units .drop-opt label img{
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    width: 12px;
+}
+.nav .units .drop-opt label:has(input[type="checkbox"]:checked){
+    background-color: var(--neutral-700);
+
+    img{
+        opacity: 1;
+    }
+}
+.nav .units .drop-opt p{
+    font-size: 0.7rem;
+    color: var(--neutral-200);
+    opacity: 0.9;
+    padding: 4px 6px;
+}
+.nav .units .drop-opt > *{
+    display: flex;
+    flex-direction: column;
+
+    *{
+        margin-bottom: 2px;
+    }
+}
+.nav .units .drop-opt > * + *{
+    border-bottom: 1.5px solid var(--neutral-700);
+}
+.greet{
     text-align: center;
     margin-block: 30px;
     font-size: 3.2rem;
+    font-family: Bricolage;
 }
 .search{
     max-width: 550px;
@@ -155,6 +257,7 @@ h1{
 .forecast .display-forecast .detail-nd-temp .temp{
     font-size: 6rem;
     text-align: center;
+    font-family: DM_Sans;
 }
 .forecast .display-forecast .details{
     display: flex;
@@ -244,6 +347,72 @@ h1{
     opacity: 1;
     border-radius: 12px;
     overflow: hidden;
+}
+.hourly-forecast .drop-day{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+}
+.hourly-forecast .drop-day .day-drop-opt{
+    position: absolute;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    top: calc(100% + 12px);
+    right: 0;
+    background-color: var(--neutral-800);
+    border: 1px solid var(--neutral-700);
+    border-radius: 7px;
+    padding: 3px 5px;
+    font-size: 0.8rem;
+    box-shadow: 4px 4px 10px 8px rgba(0, 0, 0, 0.089);
+    z-index: 20;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease;
+}
+.hourly-forecast .drop-day .day-switch{
+    display: none;
+    appearance: none;
+}
+.day-icon-dropdown{
+    transition: 0.35s ease;
+}
+.hourly-forecast .drop-day:has(.day-switch[type="checkbox"]:checked){
+    .day-drop-opt{
+        visibility: visible;
+        opacity: 1;
+        transition: 0.35s ease;
+    }
+    .day-icon-dropdown{
+        transform: rotate(180deg);
+        transition: 0.35s ease;
+    }
+}
+.hourly-forecast .day-drop-opt label{
+    padding: 6px 6px;
+    padding-inline-end: 70px;
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    transition: all 0.35s ease;
+}
+.hourly-forecast .day-drop-opt label:hover{
+    background-color: var(--neutral-700);
+}
+.hourly-forecast .day-drop-opt label:has(input[type="checkbox"]:checked){
+    background-color: var(--neutral-700);
+
+    img{
+        opacity: 1;
+    }
+}
+.hourly-forecast .day-drop-opt label input{
+    display: none;
+    appearance: none;
 }
 .hourly-forecast .hourly-title{
     display: flex;

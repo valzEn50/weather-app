@@ -20,17 +20,63 @@
   <nav class="nav max-w">
     <img src="./assets/images/logo.svg" alt="Weather Now Logo" class="logo">
 
-    <div class="units">
+    <label for="unit-dropdown" class="units">
+      <input type="checkbox" name="unit-dropdown" id="unit-dropdown" class="unit-dropdown">
       <div class="drop-sel">
-        <img src="assets\images\icon-units.svg" alt=""> <p>Units</p> 
-        <img src="assets/images/icon-dropdown.svg" alt="">
+        <img src="assets\images\icon-units.svg" alt=""> 
+        <p>Units</p> 
+        <img src="assets/images/icon-dropdown.svg" alt="" class="unit-icon-dropdown">
       </div>
-      <div class="drop-opt"></div>
-    </div>
+      <div class="drop-opt">
+        <label for="imperial-switch">
+          Switch to Imperial
+          <input type="checkbox" name="imperial-switch" id="imperial-switch">
+        </label>
+        <div class="temp-select-con">
+          <p class="temp-select-text">Temperature</p>
+          <label for="celsius-switch" class="celsius-switch">
+            Celsius(°C)
+            <img src="assets/images/icon-checkmark.svg" alt="">
+            <input type="checkbox" name="celsius-switch" id="celsius-switch">
+          </label>
+          <label for="fahrenheit-switch" class="fahrenheit-switch">
+            Fahrenheit(°F)
+            <img src="assets/images/icon-checkmark.svg" alt="">
+            <input type="checkbox" name="fahrenheit-switch" id="fahrenheit-switch">
+          </label>
+        </div>
+        <div class="wind-select-con">
+          <p class="wind-select-text">Wind Speed</p>
+          <label for="km-switch" class="km-switch">
+            km/h
+            <img src="assets/images/icon-checkmark.svg" alt="">
+            <input type="checkbox" name="km-switch" id="km-switch">
+          </label>
+          <label for="mph-switch" class="mph-switch">
+            mph
+            <img src="assets/images/icon-checkmark.svg" alt="">
+            <input type="checkbox" name="mph-switch" id="mph-switch">
+          </label>
+        </div>
+        <div class="precipitation-select-con">
+          <p class="precipitation-select-text">Precipitation</p>
+          <label for="millimeters-switch" class="millimeters-switch">
+            Millimeters (mm)
+            <img src="assets/images/icon-checkmark.svg" alt="">
+            <input type="checkbox" name="millimeters-switch" id="millimeters-switch">
+          </label>
+          <label for="inches-switch" class="inches-switch">
+            Inches (in)
+            <img src="assets/images/icon-checkmark.svg" alt="">
+            <input type="checkbox" name="inches-switch" id="inches-switch">
+          </label>
+        </div>
+      </div>
+    </label>
 
 
   </nav>
-  <h1>How's the sky looking today</h1>
+  <h1 class="greet">How's the sky looking today</h1>
   <div class="search">
     <div class="input-con">
       <img src="assets/images/icon-search.svg" alt="">
@@ -147,11 +193,43 @@
       <div class="hourly-forecast">
             <div class="hourly-title">
               <h4>Hourly forecast</h4>
-              <div class="drop-day">
+              <label for="day-switch" class="drop-day">
+                <input type="checkbox" name="day-switch" id="day-switch" class="day-switch">
                 <div class="drop">
-                  Tuesday <img src="assets/images/icon-dropdown.svg" alt="">
+                  Tuesday <img src="assets/images/icon-dropdown.svg" alt="" class="day-icon-dropdown">
                 </div>
-              </div>
+                <div class="day-drop-opt">
+                  <label for="monday-switch" class="monday-switch">
+                    Monday
+                    <input type="checkbox" name="monday-switch" id="monday-switch">
+                  </label>
+                  <label for="tuesday-switch" class="tuesday-switch">
+                    Tuesday
+                    <input type="checkbox" name="tuesday-switch" id="tuesday-switch">
+                  </label>
+                  <label for="wednesday-switch" class="wednesday-switch">
+                    Wednesday
+                    <input type="checkbox" name="wednesday-switch" id="wednesday-switch">
+                  </label>
+                  <label for="thursday-switch" class="thursday-switch">
+                    Thursday
+                    <input type="checkbox" name="thursday-switch" id="thursday-switch">
+                  </label>
+                  <label for="friday-switch" class="friday-switch">
+                    Friday
+                    <input type="checkbox" name="friday-switch" id="friday-switch">
+                  </label>
+                  <label for="saturday-switch" class="saturday-switch">
+                    Saturday
+                    <input type="checkbox" name="saturday-switch" id="saturday-switch">
+                  </label>
+                  <label for="sunday-switch" class="sunday-switch">
+                    Sunday
+                    <input type="checkbox" name="sunday-switch" id="sunday-switch">
+                  </label>
+
+                </div>
+              </label>
             </div>
             <div class="list-con">
               <div class="hour-box">
