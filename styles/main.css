@@ -40,23 +40,29 @@ body{
     flex-direction: column;
     font-weight: 300;
     cursor: pointer;
+    color: var(--neutral-0);
+
+    border: none;
+    border-radius: 4px;
+    background-color: transparent;
+    outline: none;
+    
 }
 .nav .units .unit-dropdown{
-    display: none;
     appearance: none;
 }
 .nav .units .drop-sel{
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 7px;
     background-color: var(--neutral-700);
     padding: 8px 10px;
     border-radius: 4px;
+    font-size: 0.9rem;
 }
 
 .nav .units img{
     width: 12px;
-    /* display: block; */
 }
 .nav .units img:nth-child(1){
     width: 16px;
@@ -66,6 +72,7 @@ body{
     top: calc(100% + 12px);
     right: 0;
     width: max-content;
+    text-align: left;
     display: flex;
     flex-direction: column;
     background-color: var(--neutral-800);
@@ -80,8 +87,8 @@ body{
     visibility: hidden;
 }
 .nav .units .unit-icon-dropdown{
-        transition: 0.35s ease;
-    }
+    transition: 0.35s ease;
+}
 .nav .units:has(.unit-dropdown[type="checkbox"]:checked){
     .drop-opt{
         visibility: visible;
@@ -93,9 +100,9 @@ body{
         transition: 0.35s ease;
     }
 }
-.nav .units .drop-opt input{
-    display: none;
-    appearance: none;
+.nav .units:has(.unit-dropdown[type="checkbox"]:focus-visible){
+    outline: 2px solid var(--neutral-0);
+    outline-offset: 3px;
 }
 .nav .units .drop-opt label{
     padding: 6px 6px;
@@ -104,6 +111,7 @@ body{
     justify-content: space-between;
     gap: 20px;
     transition: all 0.35s ease;
+    position: relative;
 }
 .nav .units .drop-opt label:hover{
     background-color: var(--neutral-700);
@@ -113,6 +121,15 @@ body{
     transition: opacity 0.2s ease;
     width: 12px;
 }
+.nav .units .drop-opt input{
+    appearance: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    overflow: hidden;
+    opacity: 0;
+}
 .nav .units .drop-opt label:has(input[type="checkbox"]:checked){
     background-color: var(--neutral-700);
 
@@ -120,6 +137,10 @@ body{
         opacity: 1;
     }
 }
+.nav .units .drop-opt label:has(input[type="checkbox"]:focus-visible){
+    outline: 1px solid var(--neutral-0);
+}
+
 .nav .units .drop-opt p{
     font-size: 0.7rem;
     color: var(--neutral-200);
@@ -197,6 +218,11 @@ body{
     border: none;
     outline: none;
 }
+.search input:focus-visible{
+    border: none;
+    outline-offset: 3px;
+    outline: 2px solid var(--neutral-0);
+}
 .search button{
     border: none;
     outline: none;
@@ -209,6 +235,10 @@ body{
 }
 .search button:hover{
     background-color: var(--blue-700);
+}
+.search button:focus-visible{
+    outline: 2px solid var(--blue-500);
+    outline-offset: 3px;
 }
 .forecast{
     display: grid;
@@ -347,6 +377,11 @@ body{
     opacity: 1;
     border-radius: 12px;
     overflow: hidden;
+    font-weight: 400;
+}
+.hourly-forecast h4{
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 .hourly-forecast .drop-day{
     display: flex;
@@ -425,8 +460,9 @@ body{
     display: flex;
     gap: 5px;
     background-color: var(--neutral-600);
-    padding: 8px 10px;
+    padding: 8px 16px;
     border-radius: 4px;
+    font-size: 0.9rem;
 }
 .hourly-forecast .list-con{
     display: flex;
