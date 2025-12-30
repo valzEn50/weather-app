@@ -80,7 +80,6 @@ body{
     border-radius: 7px;
     padding: 3px 5px;
     box-shadow: 4px 4px 10px 8px rgba(0, 0, 0, 0.089);
-    font-size: 0.8rem;
     z-index: 10;
     opacity: 0;
     transition: 0.35s ease;
@@ -142,7 +141,7 @@ body{
 }
 
 .nav .units .drop-opt p{
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: var(--neutral-200);
     opacity: 0.9;
     padding: 4px 6px;
@@ -401,7 +400,6 @@ body{
     border: 1px solid var(--neutral-700);
     border-radius: 7px;
     padding: 3px 5px;
-    font-size: 0.8rem;
     box-shadow: 4px 4px 10px 8px rgba(0, 0, 0, 0.089);
     z-index: 20;
     opacity: 0;
