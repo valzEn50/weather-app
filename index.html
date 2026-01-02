@@ -17,372 +17,446 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
-<body>
-<div class="app">
-  <nav class="nav max-w">
-    <img src="./assets/images/logo.svg" alt="Weather Now Logo" class="logo">
+  <body>
+    <div class="app">
+      <nav class="nav max-w">
+        <img src="./assets/images/logo.svg" alt="Weather Now Logo" class="logo">
 
-    <label  class="units">
-      <input type="checkbox" name="unit-dropdown" id="unit-dropdown" class="unit-dropdown">
-      <div class="drop-sel">
-        <img src="assets\images\icon-units.svg" alt=""> 
-        <p>Units</p> 
-        <img src="assets/images/icon-dropdown.svg" alt="" class="unit-icon-dropdown">
-      </div>
-      <div class="drop-opt">
-        <label for="imperial-switch">
-          Switch to Imperial
-          <input type="checkbox" name="imperial-switch" id="imperial-switch">
-        </label>
-        <div class="temp-select-con">
-          <p class="temp-select-text">Temperature</p>
-          <label for="celsius-switch" class="celsius-switch">
-            Celsius(°C)
-            <img src="assets/images/icon-checkmark.svg" alt="">
-            <input type="checkbox" name="celsius-switch" id="celsius-switch">
-          </label>
-          <label for="fahrenheit-switch" class="fahrenheit-switch">
-            Fahrenheit(°F)
-            <img src="assets/images/icon-checkmark.svg" alt="">
-            <input type="checkbox" name="fahrenheit-switch" id="fahrenheit-switch">
-          </label>
-        </div>
-        <div class="wind-select-con">
-          <p class="wind-select-text">Wind Speed</p>
-          <label for="km-switch" class="km-switch">
-            km/h
-            <img src="assets/images/icon-checkmark.svg" alt="">
-            <input type="checkbox" name="km-switch" id="km-switch">
-          </label>
-          <label for="mph-switch" class="mph-switch">
-            mph
-            <img src="assets/images/icon-checkmark.svg" alt="">
-            <input type="checkbox" name="mph-switch" id="mph-switch">
-          </label>
-        </div>
-        <div class="precipitation-select-con">
-          <p class="precipitation-select-text">Precipitation</p>
-          <label for="millimeters-switch" class="millimeters-switch">
-            Millimeters (mm)
-            <img src="assets/images/icon-checkmark.svg" alt="">
-            <input type="checkbox" name="millimeters-switch" id="millimeters-switch">
-          </label>
-          <label for="inches-switch" class="inches-switch">
-            Inches (in)
-            <img src="assets/images/icon-checkmark.svg" alt="">
-            <input type="checkbox" name="inches-switch" id="inches-switch">
-          </label>
-        </div>
-      </div>
-    </label>
-
-
-  </nav>
-  <h1 class="greet">How's the sky looking today</h1>
-  <div class="search">
-    <div class="input-con">
-      <img src="assets/images/icon-search.svg" alt="">
-      <input type="text" placeholder="Search for a place..." name="search" id="search">
-    </div>
-    <button>Search</button>
-  </div>
-
-
-  <div class="forecast max-w">
-    <div class="left-box">
-        <div class="display-forecast">
-          <picture>
-            <source media="(max-width: 544px)" srcset="./assets/images/bg-today-small.svg">
-            <img src="assets/images/bg-today-large.svg" alt="" class="display-img">
-          </picture>
-          <div class="detail-nd-temp">
-            <div class="details">
-              <p class="location">Berlin, Germany</p>
-              <p class="location">Tuesday, Aug 5, 2025</p>
-            </div>
-            <div class="temp-con">
-              <img src="assets/images/icon-sunny.webp" alt="">
-              <h2 class="temp">20°</h2>
-            </div>
+        <label  class="units">
+          <input type="checkbox" name="unit-dropdown" id="unit-dropdown" class="unit-dropdown">
+          <div class="drop-sel">
+            <img src="assets\images\icon-units.svg" alt=""> 
+            <p>Units</p> 
+            <img src="assets/images/icon-dropdown.svg" alt="" class="unit-icon-dropdown">
           </div>
-        </div>
-
-
-      <div class="feel-forecast">
-        <div class="box">
-          <p class="box-text">Feels Like</p>
-          <p class="box-temp">18°</p>
-        </div>
-        <div class="box">
-          <p class="box-text">Humidity</p>
-          <p class="box-temp">46%</p>
-        </div>
-        <div class="box">
-          <p class="box-text">Wind</p>
-          <p class="box-temp">14 km/h</p>
-        </div>
-        <div class="box">
-          <p class="box-text">Prepicitation</p>
-          <p class="box-temp">0 mm</p>
-        </div>
-      </div>
-
-
-      <div class="daily-forecast">
-        <h3>Daily forecast</h3>
-        <div class="daily-con">
-          <div class="box">
-            <p class="day">Tue</p>
-            <img src="assets/images/icon-rain.webp" alt="rainy">
-            <div class="temp-daily">
-              <span>20°</span>
-              <span>14°</span>
-            </div>
-          </div>
-          <div class="box">
-            <p class="day">Wed</p>
-            <img src="assets/images/icon-rain.webp" alt="rainy">
-            <div class="temp-daily">
-              <span>21°</span>
-              <span>15°</span>
-            </div>
-          </div>
-          <div class="box">
-            <p class="day">Thu</p>
-            <img src="assets/images/icon-sunny.webp" alt="sunny">
-            <div class="temp-daily">
-              <span>24°</span>
-              <span>14°</span>
-            </div>
-          </div>
-          <div class="box">
-            <p class="day">Fri</p>
-            <img src="assets/images/icon-partly-cloudy.webp" alt="partly cloudy">
-            <div class="temp-daily">
-              <span>25°</span>
-              <span>13°</span>
-            </div>
-          </div>
-          <div class="box">
-            <p class="day">Sat</p>
-            <img src="assets/images/icon-storm.webp" alt="storm">
-            <div class="temp-daily">
-              <span>21°</span>
-              <span>15°</span>
-            </div>
-          </div>
-          <div class="box">
-            <p class="day">Sun</p>
-            <img src="assets/images/icon-snow.webp" alt="snow">
-            <div class="temp-daily">
-              <span>25°</span>
-              <span>16°</span>
-            </div>
-          </div>
-          <div class="box">
-            <p class="day">Mon</p>
-            <img src="assets/images/icon-fog.webp" alt="rainy">
-            <div class="temp-daily">
-              <span>24°</span>
-              <span>15°</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-      
-    <div class="right-box">
-      <div class="hourly-forecast">
-            <div class="hourly-title">
-              <h4>Hourly forecast</h4>
-              <label for="day-switch" class="drop-day">
-                <input type="checkbox" name="day-switch" id="day-switch" class="day-switch">
-                <div class="drop">
-                  Tuesday <img src="assets/images/icon-dropdown.svg" alt="" class="day-icon-dropdown">
-                </div>
-                <div class="day-drop-opt">
-                  <label for="monday-switch" class="monday-switch">
-                    Monday
-                    <input type="checkbox" name="monday-switch" id="monday-switch">
-                  </label>
-                  <label for="tuesday-switch" class="tuesday-switch">
-                    Tuesday
-                    <input type="checkbox" name="tuesday-switch" id="tuesday-switch">
-                  </label>
-                  <label for="wednesday-switch" class="wednesday-switch">
-                    Wednesday
-                    <input type="checkbox" name="wednesday-switch" id="wednesday-switch">
-                  </label>
-                  <label for="thursday-switch" class="thursday-switch">
-                    Thursday
-                    <input type="checkbox" name="thursday-switch" id="thursday-switch">
-                  </label>
-                  <label for="friday-switch" class="friday-switch">
-                    Friday
-                    <input type="checkbox" name="friday-switch" id="friday-switch">
-                  </label>
-                  <label for="saturday-switch" class="saturday-switch">
-                    Saturday
-                    <input type="checkbox" name="saturday-switch" id="saturday-switch">
-                  </label>
-                  <label for="sunday-switch" class="sunday-switch">
-                    Sunday
-                    <input type="checkbox" name="sunday-switch" id="sunday-switch">
-                  </label>
-
-                </div>
+          <div class="drop-opt">
+            <label for="imperial-switch">
+              Switch to Imperial
+              <input type="checkbox" name="imperial-switch" id="imperial-switch">
+            </label>
+            <div class="temp-select-con">
+              <p class="temp-select-text">Temperature</p>
+              <label for="celsius-switch" class="celsius-switch">
+                Celsius(°C)
+                <img src="assets/images/icon-checkmark.svg" alt="">
+                <input type="checkbox" name="celsius-switch" id="celsius-switch">
+              </label>
+              <label for="fahrenheit-switch" class="fahrenheit-switch">
+                Fahrenheit(°F)
+                <img src="assets/images/icon-checkmark.svg" alt="">
+                <input type="checkbox" name="fahrenheit-switch" id="fahrenheit-switch">
               </label>
             </div>
-            <div class="list-con">
-              <div class="hour-box">
-                <div class="detail">
-                  <img src="assets/images/icon-overcast.webp" alt=""> 
-                  <span class="time">12 AM</span>
+            <div class="wind-select-con">
+              <p class="wind-select-text">Wind Speed</p>
+              <label for="km-switch" class="km-switch">
+                km/h
+                <img src="assets/images/icon-checkmark.svg" alt="">
+                <input type="checkbox" name="km-switch" id="km-switch">
+              </label>
+              <label for="mph-switch" class="mph-switch">
+                mph
+                <img src="assets/images/icon-checkmark.svg" alt="">
+                <input type="checkbox" name="mph-switch" id="mph-switch">
+              </label>
+            </div>
+            <div class="precipitation-select-con">
+              <p class="precipitation-select-text">Precipitation</p>
+              <label for="millimeters-switch" class="millimeters-switch">
+                Millimeters (mm)
+                <img src="assets/images/icon-checkmark.svg" alt="">
+                <input type="checkbox" name="millimeters-switch" id="millimeters-switch">
+              </label>
+              <label for="inches-switch" class="inches-switch">
+                Inches (in)
+                <img src="assets/images/icon-checkmark.svg" alt="">
+                <input type="checkbox" name="inches-switch" id="inches-switch">
+              </label>
+            </div>
+          </div>
+        </label>
+
+
+      </nav>
+      <h1 class="greet">How's the sky looking today?</h1>
+      <div class="search">
+        <div class="input-con">
+          <img src="assets/images/icon-search.svg" alt="">
+          <input type="text" placeholder="Search for a place..." name="search" id="search">
+        </div>
+        <button>Search</button>
+      </div>
+
+
+      <div class="forecast max-w">
+        <div class="left-box">
+            <div class="display-forecast">
+              <picture>
+                <source media="(max-width: 544px)" srcset="./assets/images/bg-today-small.svg">
+                <img src="assets/images/bg-today-large.svg" alt="" class="display-img">
+              </picture>
+              <div class="detail-nd-temp">
+                <div class="details">
+                  <p class="location">Berlin, Germany</p>
+                  <p class="location">Tuesday, Aug 5, 2025</p>
                 </div>
-                <span class="temp">20°</span>
-              </div>
-              <div class="hour-box">
-                <div class="detail">
-                  <img src="assets/images/icon-overcast.webp" alt=""> 
-                  <span class="time">12 AM</span>
+                <div class="temp-con">
+                  <img src="assets/images/icon-sunny.webp" alt="">
+                  <h2 class="temp">20°</h2>
                 </div>
-                <span class="temp">20°</span>
-              </div>
-              <div class="hour-box">
-                <div class="detail">
-                  <img src="assets/images/icon-overcast.webp" alt=""> 
-                  <span class="time">12 AM</span>
-                </div>
-                <span class="temp">20°</span>
-              </div>
-              <div class="hour-box">
-                <div class="detail">
-                  <img src="assets/images/icon-overcast.webp" alt=""> 
-                  <span class="time">12 AM</span>
-                </div>
-                <span class="temp">20°</span>
-              </div>
-              <div class="hour-box">
-                <div class="detail">
-                  <img src="assets/images/icon-overcast.webp" alt=""> 
-                  <span class="time">12 AM</span>
-                </div>
-                <span class="temp">20°</span>
-              </div>
-              <div class="hour-box">
-                <div class="detail">
-                  <img src="assets/images/icon-overcast.webp" alt=""> 
-                  <span class="time">12 AM</span>
-                </div>
-                <span class="temp">20°</span>
-              </div>
-              <div class="hour-box">
-                <div class="detail">
-                  <img src="assets/images/icon-overcast.webp" alt=""> 
-                  <span class="time">12 AM</span>
-                </div>
-                <span class="temp">20°</span>
-              </div>
-              <div class="hour-box">
-                <div class="detail">
-                  <img src="assets/images/icon-overcast.webp" alt=""> 
-                  <span class="time">12 AM</span>
-                </div>
-                <span class="temp">20°</span>
-              </div>
-              <div class="hour-box">
-                <div class="detail">
-                  <img src="assets/images/icon-overcast.webp" alt=""> 
-                  <span class="time">12 AM</span>
-                </div>
-                <span class="temp">20°</span>
-              </div>
-              <div class="hour-box">
-                <div class="detail">
-                  <img src="assets/images/icon-overcast.webp" alt=""> 
-                  <span class="time">12 AM</span>
-                </div>
-                <span class="temp">20°</span>
-              </div>
-              <div class="hour-box">
-                <div class="detail">
-                  <img src="assets/images/icon-overcast.webp" alt=""> 
-                  <span class="time">12 AM</span>
-                </div>
-                <span class="temp">20°</span>
-              </div>
-              <div class="hour-box">
-                <div class="detail">
-                  <img src="assets/images/icon-overcast.webp" alt=""> 
-                  <span class="time">12 AM</span>
-                </div>
-                <span class="temp">20°</span>
               </div>
             </div>
 
+
+          <div class="feel-forecast">
+            <div class="box">
+              <p class="box-text">Feels Like</p>
+              <p class="box-temp">18°</p>
+            </div>
+            <div class="box">
+              <p class="box-text">Humidity</p>
+              <p class="box-temp">46%</p>
+            </div>
+            <div class="box">
+              <p class="box-text">Wind</p>
+              <p class="box-temp">14 km/h</p>
+            </div>
+            <div class="box">
+              <p class="box-text">Prepicitation</p>
+              <p class="box-temp">0 mm</p>
+            </div>
           </div>
+
+
+          <div class="daily-forecast">
+            <h3>Daily forecast</h3>
+            <div class="daily-con">
+              <div class="box">
+                <p class="day">Tue</p>
+                <img src="assets/images/icon-rain.webp" alt="rainy">
+                <div class="temp-daily">
+                  <span>20°</span>
+                  <span>14°</span>
+                </div>
+              </div>
+              <div class="box">
+                <p class="day">Wed</p>
+                <img src="assets/images/icon-rain.webp" alt="rainy">
+                <div class="temp-daily">
+                  <span>21°</span>
+                  <span>15°</span>
+                </div>
+              </div>
+              <div class="box">
+                <p class="day">Thu</p>
+                <img src="assets/images/icon-sunny.webp" alt="sunny">
+                <div class="temp-daily">
+                  <span>24°</span>
+                  <span>14°</span>
+                </div>
+              </div>
+              <div class="box">
+                <p class="day">Fri</p>
+                <img src="assets/images/icon-partly-cloudy.webp" alt="partly cloudy">
+                <div class="temp-daily">
+                  <span>25°</span>
+                  <span>13°</span>
+                </div>
+              </div>
+              <div class="box">
+                <p class="day">Sat</p>
+                <img src="assets/images/icon-storm.webp" alt="storm">
+                <div class="temp-daily">
+                  <span>21°</span>
+                  <span>15°</span>
+                </div>
+              </div>
+              <div class="box">
+                <p class="day">Sun</p>
+                <img src="assets/images/icon-snow.webp" alt="snow">
+                <div class="temp-daily">
+                  <span>25°</span>
+                  <span>16°</span>
+                </div>
+              </div>
+              <div class="box">
+                <p class="day">Mon</p>
+                <img src="assets/images/icon-fog.webp" alt="rainy">
+                <div class="temp-daily">
+                  <span>24°</span>
+                  <span>15°</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          
+        <div class="right-box">
+          <div class="hourly-forecast">
+                <div class="hourly-title">
+                  <h4>Hourly forecast</h4>
+                  <label for="day-switch" class="drop-day">
+                    <input type="checkbox" name="day-switch" id="day-switch" class="day-switch">
+                    <div class="drop">
+                      Tuesday <img src="assets/images/icon-dropdown.svg" alt="" class="day-icon-dropdown">
+                    </div>
+                    <div class="day-drop-opt">
+                      <label for="monday-switch" class="monday-switch">
+                        Monday
+                        <input type="checkbox" name="monday-switch" id="monday-switch">
+                      </label>
+                      <label for="tuesday-switch" class="tuesday-switch">
+                        Tuesday
+                        <input type="checkbox" name="tuesday-switch" id="tuesday-switch">
+                      </label>
+                      <label for="wednesday-switch" class="wednesday-switch">
+                        Wednesday
+                        <input type="checkbox" name="wednesday-switch" id="wednesday-switch">
+                      </label>
+                      <label for="thursday-switch" class="thursday-switch">
+                        Thursday
+                        <input type="checkbox" name="thursday-switch" id="thursday-switch">
+                      </label>
+                      <label for="friday-switch" class="friday-switch">
+                        Friday
+                        <input type="checkbox" name="friday-switch" id="friday-switch">
+                      </label>
+                      <label for="saturday-switch" class="saturday-switch">
+                        Saturday
+                        <input type="checkbox" name="saturday-switch" id="saturday-switch">
+                      </label>
+                      <label for="sunday-switch" class="sunday-switch">
+                        Sunday
+                        <input type="checkbox" name="sunday-switch" id="sunday-switch">
+                      </label>
+
+                    </div>
+                  </label>
+                </div>
+                <div class="list-con">
+                  <div class="hour-box">
+                    <div class="detail">
+                      <img src="assets/images/icon-overcast.webp" alt=""> 
+                      <span class="time">12 AM</span>
+                    </div>
+                    <span class="temp">20°</span>
+                  </div>
+                  <div class="hour-box">
+                    <div class="detail">
+                      <img src="assets/images/icon-overcast.webp" alt=""> 
+                      <span class="time">12 AM</span>
+                    </div>
+                    <span class="temp">20°</span>
+                  </div>
+                  <div class="hour-box">
+                    <div class="detail">
+                      <img src="assets/images/icon-overcast.webp" alt=""> 
+                      <span class="time">12 AM</span>
+                    </div>
+                    <span class="temp">20°</span>
+                  </div>
+                  <div class="hour-box">
+                    <div class="detail">
+                      <img src="assets/images/icon-overcast.webp" alt=""> 
+                      <span class="time">12 AM</span>
+                    </div>
+                    <span class="temp">20°</span>
+                  </div>
+                  <div class="hour-box">
+                    <div class="detail">
+                      <img src="assets/images/icon-overcast.webp" alt=""> 
+                      <span class="time">12 AM</span>
+                    </div>
+                    <span class="temp">20°</span>
+                  </div>
+                  <div class="hour-box">
+                    <div class="detail">
+                      <img src="assets/images/icon-overcast.webp" alt=""> 
+                      <span class="time">12 AM</span>
+                    </div>
+                    <span class="temp">20°</span>
+                  </div>
+                  <div class="hour-box">
+                    <div class="detail">
+                      <img src="assets/images/icon-overcast.webp" alt=""> 
+                      <span class="time">12 AM</span>
+                    </div>
+                    <span class="temp">20°</span>
+                  </div>
+                  <div class="hour-box">
+                    <div class="detail">
+                      <img src="assets/images/icon-overcast.webp" alt=""> 
+                      <span class="time">12 AM</span>
+                    </div>
+                    <span class="temp">20°</span>
+                  </div>
+                  <div class="hour-box">
+                    <div class="detail">
+                      <img src="assets/images/icon-overcast.webp" alt=""> 
+                      <span class="time">12 AM</span>
+                    </div>
+                    <span class="temp">20°</span>
+                  </div>
+                  <div class="hour-box">
+                    <div class="detail">
+                      <img src="assets/images/icon-overcast.webp" alt=""> 
+                      <span class="time">12 AM</span>
+                    </div>
+                    <span class="temp">20°</span>
+                  </div>
+                  <div class="hour-box">
+                    <div class="detail">
+                      <img src="assets/images/icon-overcast.webp" alt=""> 
+                      <span class="time">12 AM</span>
+                    </div>
+                    <span class="temp">20°</span>
+                  </div>
+                  <div class="hour-box">
+                    <div class="detail">
+                      <img src="assets/images/icon-overcast.webp" alt=""> 
+                      <span class="time">12 AM</span>
+                    </div>
+                    <span class="temp">20°</span>
+                  </div>
+                </div>
+
+              </div>
+        </div>
+        
+      </div>
+      <!-- <div class="forecast max-w load-con">
+        <div class="demo-left">
+
+          <div class="display-demo">
+
+
+            <div class="load-ani">
+              <div class="bounce">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <p>Loading...</p>
+            </div>
+          </div>
+
+          <div class="feel-forecast feel-demo">
+            <div class="feel-box">
+              <p>Feels Like</p>
+              <div></div>
+            </div>
+            <div class="feel-box">
+              <p>Humidity</p>
+              <div></div>
+            </div>
+            <div class="feel-box">
+              <p>Wind</p>
+              <div></div>
+            </div>
+            <div class="feel-box">
+              <p>Percipitation</p>
+              <div></div>
+            </div>
+          </div>
+
+          <div class="daily-demo">
+            <p>Daily Forecast</p>
+            <div class="demo-daily-con">
+              <div class="daily-box"></div>
+              <div class="daily-box"></div>
+              <div class="daily-box"></div>
+              <div class="daily-box"></div>
+              <div class="daily-box"></div>
+              <div class="daily-box"></div>
+              <div class="daily-box"></div>
+            </div>
+          </div>
+
+        </div>
+        <div class="demo-right">
+
+          <div class="hourly-demo">
+            <div class="demo-hourly-title">
+              <p>Hourly Forecast</p>
+              <div class="dash-con">
+                <div class="dash"></div>
+                <img src="./assets/images/icon-dropdown.svg" alt="">
+              </div>
+            </div>
+            <div class="demo-hourly-con">
+              <div class="hourly-box"></div>
+              <div class="hourly-box"></div>
+              <div class="hourly-box"></div>
+              <div class="hourly-box"></div>
+              <div class="hourly-box"></div>
+              <div class="hourly-box"></div>
+              <div class="hourly-box"></div>
+              <div class="hourly-box"></div>
+            </div>
+          </div>
+
+        </div>
+      </div> -->
+
+
+
+
+
+
+
+
+
+
+      
+      <!-- Units
+
+      Switch to Imperial/Metric
+
+      Temperature
+
+      Celsius (°C)
+      Fahrenheit (°F)
+
+      Wind Speed
+
+      km/h
+      mph
+
+      Precipitation
+
+      Millimeters (mm)
+      Inches (in)
+
+      How's the sky looking today?
+
+      Search for a city, e.g., New York
+      Search
+
+      Feels like -->
+      <!-- Insert temperature here -->
+
+      <!-- Humidity -->
+
+      <!-- Insert humidity here -->
+
+      <!-- Wind -->
+      <!-- Insert wind here -->   
+      
+      <!-- Precipitation -->
+      <!-- Insert precipitation here -->
+
+      <!-- Daily forecast -->
+      <!-- Insert daily forecast for the next 7 days here -->
+
+      <!-- Hourly forecast -->
+      <!-- Insert hourly forecast for the selected day here -->
+
+
+
+      <!-- <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+        Coded by <a href="#">Your Name Here</a>.
+      </div> -->
     </div>
-    
-  </div>
-
-
-
-
-
-
-
-
-
-
-  
-  <!-- Units
-
-  Switch to Imperial/Metric
-
-  Temperature
-
-  Celsius (°C)
-  Fahrenheit (°F)
-
-  Wind Speed
-
-  km/h
-  mph
-
-  Precipitation
-
-  Millimeters (mm)
-  Inches (in)
-
-  How's the sky looking today?
-
-  Search for a city, e.g., New York
-  Search
-
-  Feels like -->
-  <!-- Insert temperature here -->
-
-  <!-- Humidity -->
-
-  <!-- Insert humidity here -->
-
-  <!-- Wind -->
-  <!-- Insert wind here -->   
-  
-  <!-- Precipitation -->
-  <!-- Insert precipitation here -->
-
-  <!-- Daily forecast -->
-  <!-- Insert daily forecast for the next 7 days here -->
-
-  <!-- Hourly forecast -->
-  <!-- Insert hourly forecast for the selected day here -->
-
-
-
-  <!-- <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
-</body>
+  </body>
 </html>

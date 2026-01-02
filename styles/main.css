@@ -212,6 +212,8 @@ body{
 .search input::placeholder{
     color:  var(--neutral-200);
     font-size: 1.15rem;
+    font-family: DM_Sans1;
+    letter-spacing: .5px;
 }
 .search input:focus{
     border: none;
@@ -336,9 +338,6 @@ body{
 .daily-forecast .daily-con{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(78px, 1fr));
-    /* justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap; */
     gap: 20px;
     width: 100%;
 }
@@ -496,6 +495,164 @@ body{
 .hourly-forecast .list-con .detail img{
     width: 35px;
 }
+
+
+
+/* Loading design  */
+
+
+.load-con{
+    background-color: transparent;
+    color: var(--neutral-0);
+}
+/* .load-con .demo-left{
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr;
+} */
+.demo-left .display-demo{
+    background-color: var(--neutral-800);
+    height: 280px;
+    padding: 50px; 
+    border-radius: 8px;
+    margin-bottom: 30px;   
+    text-align: center;
+    position: relative;
+
+}
+.demo-left .display-demo .load-ani{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+}
+.display-demo .load-ani .bounce{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+.display-demo .load-ani .bounce span{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--neutral-200);
+    border-radius: 50%;
+    animation: bounce 0.8s ease infinite ;
+}
+.display-demo .load-ani .bounce span:nth-child(2){
+    animation-delay: 0.15s;
+}
+.display-demo .load-ani .bounce span:nth-child(3){
+    animation-delay: 0.25s;
+}
+@keyframes bounce {
+    50%{
+        translate: 0 -15px;
+    }
+
+}
+.display-demo .load-ani p{
+    font-size: 18px;
+    color: var(--neutral-200);
+}
+.demo-left .feel-demo{
+    margin-bottom: 40px;  
+    display: grid;
+    gap: 20px;
+    height: max-content;
+}
+.demo-left .feel-demo .feel-box{
+    background-color: var(--neutral-800);
+    padding: 25px 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    font-size: 18px;
+    border: 1px solid var(--neutral-600);
+    color: var(--neutral-200);
+}
+.demo-left .feel-demo .feel-box div{
+    height: 2px;
+    width: 15px;
+    background-color: var(--neutral-0);
+}
+.demo-left .demo-daily-con{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(78px, 1fr)); 
+    gap: 20px;   
+    height: max-content;
+}
+.daily-demo p{
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+.demo-left .demo-daily-con .daily-box{
+    background-color: var(--neutral-800);
+    border-radius: 8px;
+    padding: 70px 20px;
+    border: 1px solid var(--neutral-600);
+}
+.demo-right{
+    display: grid;
+}
+.demo-right .hourly-demo{
+    background-color: var(--neutral-800);
+    border-radius: 8px;
+    height: max-content;
+}
+.demo-right .demo-hourly-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 0;
+    margin-bottom: 15px;
+}
+.demo-right .demo-hourly-title p{
+    font-size: 18px;
+    font-weight: 500;
+}
+.demo-right .demo-hourly-title .dash-con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--neutral-600);
+    padding: 10px 15px;
+    border-radius: 4px;
+
+    .dash{
+        width: 4px;
+        height: 2px;
+        background-color: var(--neutral-0);
+    }
+}
+.demo-right .demo-hourly-con{
+    display: grid;
+    grid-template-rows: repeat(auto-fit, 1fr);
+    gap: 20px;
+    padding-inline: 20px;
+    padding-block-end: 25px;
+}
+.demo-right .demo-hourly-con .hourly-box{
+    background-color: var(--neutral-700);
+    padding: 25px 2px;
+    border: 1px solid var(--neutral-600);
+    border-radius: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
