@@ -642,6 +642,49 @@ body{
     border-radius: 8px;
 }
 
+/* API error  */
+
+.api-error{
+    text-align: center;
+}
+.api-error .caution{
+    width: 30px;
+    margin: 0;
+    padding: 0;
+}
+.api-error .error-txt{
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    margin-inline: auto;
+    font-size: 18px;
+    color: var(--neutral-200);
+}
+.api-error .retry{
+    padding: 10px 16px;
+    background-color: var(--neutral-800);
+    border: none;
+    outline: none;
+    color: var(--neutral-0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-inline: auto;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.api-error .retry:hover{
+    background-color: var(--neutral-600);
+}
+.api-error .retry:focus-visible{
+    outline: 1px solid var(--neutral-0);
+    outline-offset: 2px;
+}
+
 
 
 
