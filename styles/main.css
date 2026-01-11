@@ -173,18 +173,15 @@ body{
     gap: 10px;
     margin-bottom: 30px;
     position: relative;
-    /* background-color: red; */
 }
-.search img{
+.search .search-icon{
     display: block;
-    /* background-color: red; */
     width: 18px;
     padding: 6px 0;
     position: absolute;
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
-    /* background-color: lightskyblue; */
 }
 .search .input-con{
     flex: 1;
@@ -242,6 +239,29 @@ body{
     outline-offset: 3px;
 }
 
+.input-con .search-in-progress{
+    position: absolute;
+    background-color: var(--neutral-800);
+    top: calc(100% + 10px);
+    width: 100%;
+    border-radius: 7px;
+    padding: 12px 12px;
+    display: none;
+    gap: 10px;
+}
+.input-con .progress-img{
+    width: 14px;
+    animation: loading 0.8s linear infinite;
+}
+.input-con .in-progerss-txt{
+    font-size: 16px;
+    font-weight: 400;
+}
+@keyframes loading {
+    to{
+       transform: rotate(360deg); 
+    }
+}
 .input-con .search-drop-con{
     position: absolute;
     background-color: var(--neutral-800);

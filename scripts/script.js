@@ -38,6 +38,9 @@ async function getLocationData(searchQuery) {
 
     const url = `https://geocoding-api.open-meteo.com/v1/search?name=${searchQuery}&count=10&language=en&format=json`;
 
+    const searchInProgress = document.querySelector('.search-in-progress');
+    searchInProgress.style.display = 'flex';
+
     try {
         const response = await fetch(url);
 
@@ -48,7 +51,7 @@ async function getLocationData(searchQuery) {
         console.log(result.results)
         const locationData = result.results;
 
-        
+        searchInProgress.style.display = 'none';
         searchDrop.innerHTML = '';
 
         locationData.map((location) => {
