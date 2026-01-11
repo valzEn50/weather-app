@@ -224,7 +224,7 @@ body{
     outline-offset: 3px;
     outline: 2px solid var(--neutral-0);
 }
-.search button{
+.search #search{
     border: none;
     outline: none;
     background-color: var(--blue-500);
@@ -234,13 +234,82 @@ body{
     font-size: 1.15rem;
     transition: background-color 0.3s ease-in;
 }
-.search button:hover{
+.search #search:hover{
     background-color: var(--blue-700);
 }
 .search button:focus-visible{
     outline: 2px solid var(--blue-500);
     outline-offset: 3px;
 }
+
+.input-con .search-drop-con{
+    position: absolute;
+    background-color: var(--neutral-800);
+    top: calc(100% + 10px);
+    width: 100%;
+    border-radius: 14px;
+    max-height: 220px;
+    height: 220px;
+    overflow: auto;
+    display: none;
+}
+.input-con .search-drop-con::-webkit-scrollbar{
+    display: none;
+}
+.input-con .search-opt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 4px;
+    background-color: var(--neutral-700);
+    border: 1px solid var(--neutral-600);
+    border-radius: 7px;
+    padding: 6px 10px;
+    transition: background-color 0.3s ease-in;
+
+    .country{
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--neutral-0);
+    }
+
+    .description{
+        font-size: 10px;
+        color: var(--neutral-200);
+    }
+}
+.input-con .search-opt:hover{
+    background-color: var(--neutral-600);
+}
+.input-con .search-drop{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+    overflow: auto;
+    
+    padding: 10px 12px;
+}
+.input-con .search-drop::-webkit-scrollbar{
+    appearance: none;
+    width: 3px;
+}
+.input-con .search-drop::-webkit-scrollbar-thumb{
+    width: 50px;
+    background-color: var(--neutral-600);
+}
+
+
+
+
+
+
+
+
+
+
+      /* Weather Forcast Start */
 .forecast{
     display: grid;
     grid-template-columns: 2fr 1fr;
