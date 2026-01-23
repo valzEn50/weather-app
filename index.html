@@ -20,8 +20,8 @@
   <body>
     <div class="app">
 
+    
       
-
 
       <nav class="nav max-w">
         <img src="./assets/images/logo.svg" alt="Weather Now Logo" class="logo">
@@ -34,8 +34,9 @@
             <img src="assets/images/icon-dropdown.svg" alt="" class="unit-icon-dropdown">
           </div>
           <div class="drop-opt">
-            <label for="imperial-switch">
-              Switch to Imperial
+            <label for="imperial-switch" class="imperial-switch">
+              <div>Switch to Imperial</div>
+              
               <input type="checkbox" name="imperial-switch" id="imperial-switch">
             </label>
             <div class="temp-select-con">
@@ -86,77 +87,82 @@
       
 
 
-      
-      <!-- Api Error state -->
+      <div class="upper">
+        <h1 class="greet">How's the sky looking today?</h1>
+        <div class="search">
+          <div class="input-con">
+            <img src="assets/images/icon-search.svg" alt="" class="search-icon">
+            <input type="text" placeholder="Search for a place..." name="search" id="searchInput">
+            <div class="search-in-progress">
+              <img src="./assets/images/icon-loading.svg" alt="" class="progress-img">
+              <p class="in-progerss-txt">Search in progress</p>
+            </div>
+            <div class="search-drop-con">
+              <div class="search-drop">
+                <!-- <div class="search-opt">
+                  <p class="country">City Name</p>
+                  <p class="description">Description</p>
+                </div>
+                <div class="search-opt">
+                  <p class="country">City Name</p>
+                  <p class="description">Description</p>
+                </div>
+                <div class="search-opt">
+                  <p class="country">City Name</p>
+                  <p class="description">Description</p>
+                </div>
+                <div class="search-opt">
+                  <p class="country">City Name</p>
+                  <p class="description">Description</p>
+                </div>
+                <div class="search-opt">
+                  <p class="country">City Name</p>
+                  <p class="description">Description</p>
+                </div>
+                <div class="search-opt">
+                  <p class="country">City Name</p>
+                  <p class="description">Description</p>
+                </div>
+                <div class="search-opt">
+                  <p class="country">City Name</p>
+                  <p class="description">Description</p>
+                </div>
+                <div class="search-opt">
+                  <p class="country">City Name</p>
+                  <p class="description">Description</p>
+                </div>
+                <div class="search-opt">
+                  <p class="country">City Name</p>
+                  <p class="description">Description</p>
+                </div>
+                <div class="search-opt">
+                  <p class="country">City Name</p>
+                  <p class="description">Description</p>
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <button id="search">Search</button>
+        </div>
+      </div>
 
 
-      <!-- <div class="api-error">
+
+        <!-- Api Error state -->
+
+
+      <div class="api-error">
         <img src="./assets/images/icon-error.svg" alt="" class="caution">
-        <h1 class="greet">Somthing went wrong</h1>
+        <h1 class="greet">Something went wrong</h1>
         <div class="error-txt">
           <p>We couldn't connect to the server (API Error). Please try again in a few moments</p>
         </div>
         <button class="retry">
-          <img src="./assets/images/icon-retry.svg" alt="">
+          <img src="./assets/images/icon-retry.svg" alt="" >
           Retry</button>
-      </div> -->
-
-      <h1 class="greet">How's the sky looking today?</h1>
-      <div class="search">
-        <div class="input-con">
-          <img src="assets/images/icon-search.svg" alt="" class="search-icon">
-          <input type="text" placeholder="Search for a place..." name="search" id="searchInput">
-          <div class="search-in-progress">
-            <img src="./assets/images/icon-loading.svg" alt="" class="progress-img">
-            <p class="in-progerss-txt">Search in progress</p>
-          </div>
-          <div class="search-drop-con">
-            <div class="search-drop">
-              <!-- <div class="search-opt">
-                <p class="country">City Name</p>
-                <p class="description">Description</p>
-              </div>
-              <div class="search-opt">
-                <p class="country">City Name</p>
-                <p class="description">Description</p>
-              </div>
-              <div class="search-opt">
-                <p class="country">City Name</p>
-                <p class="description">Description</p>
-              </div>
-              <div class="search-opt">
-                <p class="country">City Name</p>
-                <p class="description">Description</p>
-              </div>
-              <div class="search-opt">
-                <p class="country">City Name</p>
-                <p class="description">Description</p>
-              </div>
-              <div class="search-opt">
-                <p class="country">City Name</p>
-                <p class="description">Description</p>
-              </div>
-              <div class="search-opt">
-                <p class="country">City Name</p>
-                <p class="description">Description</p>
-              </div>
-              <div class="search-opt">
-                <p class="country">City Name</p>
-                <p class="description">Description</p>
-              </div>
-              <div class="search-opt">
-                <p class="country">City Name</p>
-                <p class="description">Description</p>
-              </div>
-              <div class="search-opt">
-                <p class="country">City Name</p>
-                <p class="description">Description</p>
-              </div> -->
-            </div>
-          </div>
-        </div>
-        <button id="search">Search</button>
       </div>
+      
+      
 
 
       <div class="forecast max-w">
@@ -269,36 +275,37 @@
                   <label for="day-switch" class="drop-day">
                     <input type="checkbox" name="day-switch" id="day-switch" class="day-switch">
                     <div class="drop">
-                      Tuesday <img src="assets/images/icon-dropdown.svg" alt="" class="day-icon-dropdown">
+                      <div>Tuesday</div>
+                      <img src="assets/images/icon-dropdown.svg" alt="" class="day-icon-dropdown">
                     </div>
                     <div class="day-drop-opt">
                       <label for="monday-switch" class="monday-switch">
                         Monday
-                        <input type="checkbox" name="monday-switch" id="monday-switch">
+                        <input type="checkbox" name="monday-switch" id="monday-switch" class="weekdaySwitch">
                       </label>
                       <label for="tuesday-switch" class="tuesday-switch">
                         Tuesday
-                        <input type="checkbox" name="tuesday-switch" id="tuesday-switch">
+                        <input type="checkbox" name="tuesday-switch" id="tuesday-switch" class="weekdaySwitch">
                       </label>
                       <label for="wednesday-switch" class="wednesday-switch">
                         Wednesday
-                        <input type="checkbox" name="wednesday-switch" id="wednesday-switch">
+                        <input type="checkbox" name="wednesday-switch" id="wednesday-switch" class="weekdaySwitch">
                       </label>
                       <label for="thursday-switch" class="thursday-switch">
                         Thursday
-                        <input type="checkbox" name="thursday-switch" id="thursday-switch">
+                        <input type="checkbox" name="thursday-switch" id="thursday-switch" class="weekdaySwitch">
                       </label>
                       <label for="friday-switch" class="friday-switch">
                         Friday
-                        <input type="checkbox" name="friday-switch" id="friday-switch">
+                        <input type="checkbox" name="friday-switch" id="friday-switch" class="weekdaySwitch">
                       </label>
                       <label for="saturday-switch" class="saturday-switch">
                         Saturday
-                        <input type="checkbox" name="saturday-switch" id="saturday-switch">
+                        <input type="checkbox" name="saturday-switch" id="saturday-switch" class="weekdaySwitch">
                       </label>
                       <label for="sunday-switch" class="sunday-switch">
                         Sunday
-                        <input type="checkbox" name="sunday-switch" id="sunday-switch">
+                        <input type="checkbox" name="sunday-switch" id="sunday-switch" class="weekdaySwitch">
                       </label>
 
                     </div>
@@ -403,7 +410,7 @@
       <!-- Loading Page -->
 
 
-      <!-- <div class="forecast max-w load-con">
+      <div class="forecast max-w load-con">
         <div class="demo-left">
 
           <div class="display-demo">
@@ -475,7 +482,7 @@
           </div>
 
         </div>
-      </div> -->
+      </div>
 
 
 

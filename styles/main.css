@@ -234,10 +234,15 @@ body{
 .search #search:hover{
     background-color: var(--blue-700);
 }
+.search #search:disabled{
+    background-color: var(--blue-400);
+    cursor: not-allowed;
+}
 .search button:focus-visible{
     outline: 2px solid var(--blue-500);
     outline-offset: 3px;
 }
+
 
 .input-con .search-in-progress{
     position: absolute;
@@ -248,6 +253,7 @@ body{
     padding: 12px 12px;
     display: none;
     gap: 10px;
+    z-index: 20;
 }
 .input-con .progress-img{
     width: 14px;
@@ -272,6 +278,7 @@ body{
     height: 220px;
     overflow: auto;
     display: none;
+    z-index: 20;
 }
 .input-con .search-drop-con::-webkit-scrollbar{
     display: none;
@@ -593,11 +600,8 @@ body{
 .load-con{
     background-color: transparent;
     color: var(--neutral-0);
+    display: none;
 }
-/* .load-con .demo-left{
-    display: grid;
-    grid-template-rows: 2fr 1fr 1fr;
-} */
 .demo-left .display-demo{
     background-color: var(--neutral-800);
     height: 280px;
@@ -735,6 +739,7 @@ body{
 
 .api-error{
     text-align: center;
+    display: none;
 }
 .api-error .caution{
     width: 30px;
