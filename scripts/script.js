@@ -259,14 +259,14 @@ async function getWeatherData(name = 'Berlin', lat = 52.52, lon = 13.41) {
 
   let temp = 'celsius';
   let speed = 'kmh';
-  let precipitation = 'mm';
+  let precip = 'mm';
 
   // Switch to checked unit 
 
   if (imperialSwitch.checked) {
     temp = 'fahrenheit';
     speed = 'mph';
-    precipitation = 'inch';
+    precip = 'inch';
   }
 
   if (celsiusSwitch.checked) {
@@ -278,7 +278,7 @@ async function getWeatherData(name = 'Berlin', lat = 52.52, lon = 13.41) {
   }
 
   if (kmSwitch.checked) {
-    speed = 'km/h';
+    speed = 'kmh';
   }
 
   if (mphSwitch.checked) {
@@ -286,15 +286,15 @@ async function getWeatherData(name = 'Berlin', lat = 52.52, lon = 13.41) {
   }
 
   if (millimetersSwitch.checked) {
-    precipitation = 'mm';
+    precip = 'mm';
   }
   if (inchesSwitch.checked) {
-    precipitation = 'inch';
+    precip = 'inch';
   }
 
   // Weather data API url 
 
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=weather_code,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset,daylight_duration,sunshine_duration,uv_index_max,uv_index_clear_sky_max,rain_sum,showers_sum,snowfall_sum,precipitation_sum,precipitation_hours,precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max,wind_direction_10m_dominant,shortwave_radiation_sum,et0_fao_evapotranspiration&hourly=temperature_2m,relative_humidity_2m,dew_point_2m,apparent_temperature,precipitation_probability,precipitation,rain,showers,snowfall,snow_depth,weather_code,pressure_msl,surface_pressure,cloud_cover,cloud_cover_low,cloud_cover_mid,cloud_cover_high,visibility,evapotranspiration,et0_fao_evapotranspiration,vapour_pressure_deficit,wind_speed_10m,wind_speed_80m,wind_speed_120m,wind_speed_180m,wind_direction_10m,wind_direction_80m,wind_direction_120m,wind_direction_180m,wind_gusts_10m,temperature_80m,temperature_120m,temperature_180m&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,rain,showers,snowfall,weather_code,cloud_cover,pressure_msl,surface_pressure,wind_speed_10m,wind_direction_10m,wind_gusts_10m&wind_speed_unit=${speed}&temperature_unit=${temp}&precipitation_unit=${precipitation}`;
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=weather_code,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset,daylight_duration,sunshine_duration,uv_index_max,uv_index_clear_sky_max,rain_sum,showers_sum,snowfall_sum,precipitation_sum,precipitation_hours,precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max,wind_direction_10m_dominant,shortwave_radiation_sum,et0_fao_evapotranspiration&hourly=temperature_2m,relative_humidity_2m,dew_point_2m,apparent_temperature,precipitation_probability,precipitation,rain,showers,snowfall,snow_depth,weather_code,pressure_msl,surface_pressure,cloud_cover,cloud_cover_low,cloud_cover_mid,cloud_cover_high,visibility,evapotranspiration,et0_fao_evapotranspiration,vapour_pressure_deficit,wind_speed_10m,wind_speed_80m,wind_speed_120m,wind_speed_180m,wind_direction_10m,wind_direction_80m,wind_direction_120m,wind_direction_180m,wind_gusts_10m,temperature_80m,temperature_120m,temperature_180m&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,rain,showers,snowfall,weather_code,cloud_cover,pressure_msl,surface_pressure,wind_speed_10m,wind_direction_10m,wind_gusts_10m&wind_speed_unit=${speed}&temperature_unit=${temp}&precipitation_unit=${precip}`;
 
     // Get the API result 
 
@@ -356,7 +356,7 @@ async function getWeatherData(name = 'Berlin', lat = 52.52, lon = 13.41) {
                 </div>
                 <div class="temp-con">
                   <img src="assets/images/icon-${weatherCodes[weather_code]}" alt="">
-                  <h2 class="temp">${temperature_2m}&deg;</h2>
+                  <h2 class="temp">${Math.round(temperature_2m)}&deg;</h2>
                 </div>
               </div>
             </div>
@@ -364,19 +364,19 @@ async function getWeatherData(name = 'Berlin', lat = 52.52, lon = 13.41) {
             <div class="feel-forecast">
               <div class="box">
                 <p class="box-text">Feels Like</p>
-                <p class="box-temp">${apparent_temperature}&deg;</p>
+                <p class="box-temp">${Math.round(apparent_temperature)}&deg;</p>
               </div>
               <div class="box">
                 <p class="box-text">Humidity</p>
-                <p class="box-temp">${relative_humidity_2m}%</p>
+                <p class="box-temp">${Math.round(relative_humidity_2m)}%</p>
               </div>
               <div class="box">
                 <p class="box-text">Wind</p>
-                <p class="box-temp">${wind_speed_10m} km/h</p>
+                <p class="box-temp">${Math.round(wind_speed_10m)} ${speed === 'kmh' ? 'km/h' : 'mph'}</p>
               </div>
               <div class="box">
                 <p class="box-text">Prepicitation</p>
-                <p class="box-temp">${precipitation} mm</p>
+                <p class="box-temp">${Math.round(precipitation)} ${precip === 'mm' ? 'mm' : 'in'}</p>
               </div>
             </div>
         `;
@@ -414,8 +414,8 @@ async function getWeatherData(name = 'Berlin', lat = 52.52, lon = 13.41) {
           console.log(new Date(date.getTime() + i * 24));
 
           day.textContent = dayName;
-          maxTemp.textContent = `${temperature_2m_max[i]}°`;
-          minTemp.textContent = `${temperature_2m_min[i]}°`;
+          maxTemp.textContent = `${Math.round(temperature_2m_max[i])}°`;
+          minTemp.textContent = `${Math.round(temperature_2m_min[i])}°`;
           img.src = `assets/images/icon-${weatherCodes[daily_weather_code[i]]}`;
 
 
@@ -431,7 +431,7 @@ async function getWeatherData(name = 'Berlin', lat = 52.52, lon = 13.41) {
 
         }  
         
-        hourlyForercast();
+        hourlyForecast(0, 24, hourly, rightBox);
 
 
 
@@ -444,7 +444,7 @@ async function getWeatherData(name = 'Berlin', lat = 52.52, lon = 13.41) {
         dailyForecast.appendChild(dailyCon)
 
         return {
-          hourly: hourly
+          hourlyy: hourly
         }
     } catch (error) {
         console.log('Error Fetching Data:',error);
@@ -461,36 +461,32 @@ async function getWeatherData(name = 'Berlin', lat = 52.52, lon = 13.41) {
 
 }
 
-async function hourlyForercast(first = 0, last = 24){
+async function hourlyForecast(first = 0, last = 24, hourlyData, right){
 
-  const hoursDay = document.querySelector('.drop').firstElementChild;
-  const hoursDate = new Date().toLocaleDateString('en-US', { weekday: 'long'})
-  hoursDay.textContent = hoursDate;
+  
+  // const hoursDate = new Date().toLocaleDateString('en-US', { weekday: 'long'})
+  
+  const hoursDate = new Intl.DateTimeFormat('en-US', {weekday: 'long'}).format(new Date().setDate(new Date().getDate()));
+  console.log(hoursDate)
 
-  const hourChecked = document.getElementById(`${hoursDate.toLowerCase}-switch`);
-  hourChecked.checked = true;
 
-  let min = first * last;
-  let max = min + last - 1;
+  // let min = first * last;
+  // let max = min + last - 1;
 
-  // Might be error
 
-  const {hourly} = await getWeatherData();
+  const hourForecast = document.createElement('div');
+        hourForecast.classList.add('hourly-forecast');
 
-  const {temperature_2m: hourly_temperature_2m,
-           time,
-           weather_code: hourly_weather_code} = hourly;
+        right.innerHTML = '';
 
-  const hourlyForecast = document.createElement('div');
-        hourlyForecast.classList.add('hourly-forecast');
-
-        hourlyForecast.innerHTML = `
+        hourForecast.innerHTML = `
           <div class="hourly-title">
             <h4>Hourly forecast</h4>
             <label for="day-switch" class="drop-day">
               <input type="checkbox" name="day-switch" id="day-switch" class="day-switch">
               <div class="drop">
-                Tuesday <img src="assets/images/icon-dropdown.svg" alt="" class="day-icon-dropdown">
+                <div>Tuesday</div>
+                <img src="assets/images/icon-dropdown.svg" alt="" class="day-icon-dropdown">
               </div>
               <div class="day-drop-opt">
 
@@ -499,9 +495,16 @@ async function hourlyForercast(first = 0, last = 24){
           </div>
         `;
 
-        const dayDropOpt = document.querySelector('.day-drop-opt');
+        
+
+        right.appendChild(hourForecast);
+
+        
+        const dayDropOpt = hourForecast.querySelector('.day-drop-opt');
 
         for(let i = 0; i < 7; i++){
+          let min = i * 24;
+          let max = min + 24 - 1;
           let newDay = new Intl.DateTimeFormat('en-US', {weekday: 'long'}).format(new Date().setDate(new Date().getDate() + i));
           const attributeString = `${newDay.toLowerCase()}-switch`;
 
@@ -516,7 +519,7 @@ async function hourlyForercast(first = 0, last = 24){
           // Set Label attributes
 
           dropHour.setAttribute('for', attributeString);
-          dropHour.setAttribute('id', attributeString);
+          dropHour.classList.add(attributeString)
 
           // Set text 
 
@@ -528,6 +531,15 @@ async function hourlyForercast(first = 0, last = 24){
           dropHourInput.setAttribute('name', attributeString);
           dropHourInput.setAttribute('id', attributeString);
           dropHourInput.classList.add('weekdaySwitch')
+          dropHourInput.addEventListener('change', ()=>{
+            offWeekdaySwitch();
+            dropHourInput.checked = true;
+            const newhourlyData = {temperature_2m: hourlyData.temperature_2m, time: hourlyData.time, weather_code: hourlyData.weather_code};
+            
+            let newHourDate = new Intl.DateTimeFormat('en-US', {weekday: 'long'}).format(new Date().setDate(new Date().getDate() + i));
+            renderHourly(min, max, hourForecast, hourlyData, newHourDate);
+            console.log('holla')
+          })
 
           // Append all 
 
@@ -538,12 +550,49 @@ async function hourlyForercast(first = 0, last = 24){
           
         }
 
-        const hourlyRightBox = document.querySelector('.right-box');
-        hourlyRightBox.appendChild(hourlyForecast);
 
-        const listCon = document.createElement('div');
-        listCon.classList.add('list-con');
-        hourlyForecast.appendChild(listCon);
+        const hoursDay = hourForecast.querySelector('.drop').firstElementChild;
+        hoursDay.textContent = hoursDate;
+        
+        const weekdaySwitch = hourForecast.querySelectorAll('.weekdaySwitch');
+        console.log(weekdaySwitch)
+
+// Click event of each week day switch
+
+// weekdaySwitch.forEach((weekday,weekIndex) =>{
+//   weekday.addEventListener('change', ()=>{
+//     offWeekdaySwitch();
+//     weekday.checked = true;
+//     const hourlyData = {temperature_2m: hourly.temperature_2m, time: hourly.time, weather_code: hourly.weather_code};
+//     hourForecast(weekIndex, 24, hourlyData);
+//   })
+// })
+
+// To off the checked state of each weekday
+
+  function offWeekdaySwitch(){
+    weekdaySwitch.forEach( day =>{
+      day.checked = false;
+      console.log('oiii')
+    })
+  }
+
+  const hourChecked = hourForecast.querySelector(`#${hoursDate.toLowerCase()}-switch`);
+  hourChecked.checked = true;
+
+  renderHourly(first, last - 1, hourForecast, hourlyData, hoursDate);
+}
+
+async function renderHourly(min, max, hourForecast, data, hoursDate) {
+
+  const {temperature_2m: hourly_temperature_2m,
+           time,
+           weather_code: hourly_weather_code} = data;
+
+           const listCon = document.createElement('div');
+           listCon.classList.add('list-con');
+           hourForecast.firstElementChild.nextElementSibling?.remove();
+           hourForecast.appendChild(listCon);
 
         for(let j = min; j < (max + 1); j++){
           const hourBox = document.createElement('div');
@@ -562,7 +611,7 @@ async function hourlyForercast(first = 0, last = 24){
           const displayHour = hour % 12 || 12;
           hourTime.textContent = `${displayHour} ${period}`;   
           hourImg.src = `assets/images/icon-${weatherCodes[hourly_weather_code[j]]}`;
-          tempBox.textContent = `${hourly_temperature_2m[j]}°`;
+          tempBox.textContent = `${Math.round(hourly_temperature_2m[j])}°`;
 
           listCon.appendChild(hourBox);
           hourBox.appendChild(detail);
@@ -570,24 +619,11 @@ async function hourlyForercast(first = 0, last = 24){
           detail.appendChild(hourTime);
           hourBox.appendChild(tempBox);
         }
+
+        const hoursDay = hourForecast.querySelector('.drop').firstElementChild;
+        hoursDay.textContent = hoursDate;
+
+        // const hourChecked = hourForecast.querySelector(`#${hoursDate.toLowerCase()}-switch`);
+        // hourChecked.checked = true;
 }
 
-const weekdaySwitch = document.querySelectorAll('.weekdaySwitch');
-
-// Click event of each week day switch
-
-weekdaySwitch.forEach((weekday,weekIndex) =>{
-  weekday.addEventListener('change', ()=>{
-    offWeekdaySwitch();
-    weekday.checked = true;
-    hourlyForercast(weekIndex, 24);
-  })
-})
-
-// To off the checked state of each weekday
-
-function offWeekdaySwitch(){
-  weekdaySwitch.forEach( day =>{
-    day.checked = false;
-  })
-}
