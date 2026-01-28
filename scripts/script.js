@@ -122,7 +122,8 @@ search.addEventListener('click', () => {
 // Retry onclick event to call loading 
 
 retry.addEventListener('click', () => {
-   loading();
+   // loading();
+   getWeatherData();
 })
 
 // Loading state 
@@ -135,7 +136,8 @@ function loading(){
 
 }
 
-loading();
+// loading();
+getWeatherData();
 
 
 // Getting the location and location list from the API 
