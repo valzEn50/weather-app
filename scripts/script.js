@@ -176,7 +176,7 @@ async function getLocationData(searchQuery) {
             description.classList.add('description');
 
             country.textContent = `${location.name}, ${location.country}`;
-            description.textContent = `${location.admin1}`;
+            description.textContent = `${location.admin1 ? location.admin1 : ""}`;
 
             searchOption.addEventListener('click', () => {
                 getWeatherData(country.textContent, location.latitude, location.longitude);
