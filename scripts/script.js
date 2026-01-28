@@ -107,6 +107,8 @@ searchInput.addEventListener('input', () => {
         searchDrop.innerHTML = '';
         searchDropCon.style.display = 'none';
 
+    }else if(searchDropCon.style.display === 'block'){
+      searchDropCon.style.display = 'none'
     }else{
       search.disabled = false;
     }
